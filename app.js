@@ -24,16 +24,14 @@ app.post('/sign_up', function (req, res) {
     var password = validator.get("password", BasicVal.string(), BasicVal.min_length(8))
     
     //Performing validation on password_repeat only if password was provided
-    if (password) {
-    	validator.get("password_repeat", function(value) {
-    		if (password != value) {
-    			return {
-    				error: 1000,
-    				error_message: "Password does not match"
-    			}
-    		}
-    	})
-    }
+	validator.get("password_repeat", function(value) {
+		if (password && password != value) {
+			return {
+				error: 1000,
+				error_message: "Password does not match"
+			}
+		}
+	})
 
     //Validating nested object
     validator.get("address", BasicVal.object(), function(value) {
