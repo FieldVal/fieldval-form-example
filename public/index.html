@@ -4,6 +4,7 @@
 	<title>FieldVal example</title>
 
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/fieldval/fieldval.js"></script>
 	<script type="text/javascript" src="bower_components/fieldval-ui/fieldval-ui.js"></script>
 
 	<script type="text/javascript" src="bower_components/fieldval-ui/themes/minimal.js"></script>
@@ -16,6 +17,8 @@
 			form.add_field("email", new FVTextField("Email"));
 			form.add_field("password", new FVTextField("Password"));
 			form.add_field("password_repeat", new FVTextField("Repeat password"));
+
+			form.add_field("date_of_birth", new FVDateField("Date of birth", {format: "yyyy-MM-dd"}));
 
 			var address_field = new FVObjectField("Address");
 			address_field.add_field("street", new FVTextField("Street"));

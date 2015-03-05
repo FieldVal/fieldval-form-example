@@ -33,6 +33,8 @@ app.post('/sign_up', function (req, res) {
 		}
 	})
 
+	validator.get('date_of_birth', BasicVal.date('yyyy-MM-dd'));
+
     //Validating nested object
     validator.get("address", BasicVal.object(), function(value) {
     	var inner_validator = new FieldVal(value);
