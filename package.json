@@ -1,0 +1,14 @@
+{
+  "name": "fieldval-form-example",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "fieldval": "FieldVal/fieldval-js#develop",
+    "bower": "*"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  }
+}

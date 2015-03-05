@@ -1,0 +1,10 @@
+{
+  "name": "fieldval-form-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "1.11.1",
+    "fieldval": "FieldVal/fieldval-js#develop",
+    "fieldval-ui": "FieldVal/fieldval-ui#develop"
+  },
+  "private": true
+}

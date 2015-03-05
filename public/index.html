@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FieldVal example</title>
+
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/fieldval-ui/fieldval-ui.js"></script>
+
+	<script type="text/javascript" src="bower_components/fieldval-ui/themes/minimal.js"></script>
+	<link rel="stylesheet" type="text/css" href="/bower_components/fieldval-ui/themes/minimal.css">
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var form = new FVForm();
+			form.add_field("email", new FVTextField("Email"));
+			form.add_field("password", new FVTextField("Password"));
+			form.add_field("password_repeat", new FVTextField("Repeat password"));
+
+			var address_field = new FVObjectField("Address");
+			address_field.add_field("street", new FVTextField("Street"));
+			address_field.add_field("city", new FVTextField("City"));
+			address_field.add_field("postal_code", new FVTextField("Postal code"));
+
+			form.add_field("address", address_field);
+			
+			form.on_submit(function(value) {
+				
+				$.ajax({
+				    type:"POST",
+				    contentType: "application/json",
+				    url: "/sign_up",
+				    data: JSON.stringify(value),
+				    success: function(res) {
+						form.clear_errors();
+					    if (res.error) {
+					    	form.error(res);
+					    }
+				    }
+				});
+
+			})
+
+			$("body").append(
+				form.element.append(
+					$("<button/>").text("Submit")
+				)
+			)
+		});
+	</script>
+</body>
+</html>
