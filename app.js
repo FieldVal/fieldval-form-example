@@ -48,6 +48,7 @@ app.post('/sign_up', function (req, res) {
     
     validator.end(function(error) {
 	    if (error) {
+            console.log('Error: ', JSON.stringify(error, null, 4));
 	        res.json(error);
 	     } else {
 		    res.json({success:true})	
