@@ -1,6 +1,6 @@
 # fieldval-form-example
 
-FieldVal sign up example presented in the blog post. 
+FieldVal sign up example presented in the [blog post](http://www.minoblog.io/asynchronous-data-validation-with-fieldval-js/). 
 
 ##Features
 * synchronous and asynchronous data validation on the backend (express)
