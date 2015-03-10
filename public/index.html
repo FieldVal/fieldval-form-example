@@ -9,10 +9,35 @@
 
 	<script type="text/javascript" src="bower_components/fieldval-ui/themes/minimal.js"></script>
 	<link rel="stylesheet" type="text/css" href="/bower_components/fieldval-ui/themes/minimal.css">
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+		.fv_field{
+			margin-bottom: 5px;
+		}
+		.submit_button{
+			-webkit-appearance: none;
+			border: none;
+			outline: none;
+			min-height: 30px;
+			font-size: 16px;
+			font-weight: bold;
+			color: white;
+			background-color: #5a3a77;
+			cursor: pointer;
+			margin: 0px;
+		}
+		.submit_button:active{
+			background-color: #9d4479;
+		}
+	</style>
 </head>
 <body>
 	<script type="text/javascript">
+
 		$(document).ready(function() {
+
 			var form = new FVForm();
 			form.add_field("email", new FVTextField("Email"));
 			form.add_field("password", new FVTextField("Password"));
@@ -46,7 +71,7 @@
 
 			$("body").append(
 				form.element.append(
-					$("<button/>").text("Submit")
+					$("<button/>").addClass("submit_button").text("Submit")
 				)
 			)
 		});
