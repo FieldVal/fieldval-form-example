@@ -40,8 +40,8 @@
 
 			var form = new FVForm();
 			form.add_field("email", new FVTextField("Email"));
-			form.add_field("password", new FVTextField("Password"));
-			form.add_field("password_repeat", new FVTextField("Repeat password"));
+			form.add_field("password", new FVPasswordField("Password"));
+			form.add_field("password_repeat", new FVPasswordField("Repeat password"));
 
 			form.add_field("date_of_birth", new FVDateField("Date of birth", {format: "yyyy-MM-dd"}));
 
