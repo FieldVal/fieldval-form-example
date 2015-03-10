@@ -9,6 +9,7 @@
     "bower": "*"
   },
   "scripts": {
+    "start": "node app.js",
     "postinstall": "./node_modules/bower/bin/bower install"
   }
 }
