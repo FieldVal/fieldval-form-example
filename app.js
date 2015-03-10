@@ -16,7 +16,7 @@ app.post('/sign_up', function (req, res) {
     var password = validator.get("password", BasicVal.string(), BasicVal.min_length(8))    
 	validator.get("password_repeat", BasicVal.string(), function(value) {
 		//Validating "password_repeat" only if password was provided
-		if (password && password != value) {
+		if (value != validator.get("password")) {
 			return {
 				error: 1000,
 				error_message: "Password does not match"
